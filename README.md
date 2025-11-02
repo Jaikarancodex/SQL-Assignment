@@ -1,4 +1,4 @@
-# SQL-Assignment
+# 🌐SQL-Assignment
 ## 1.Here is the Dataset for the below questions. 
 
 ##### Gold members Data Set--Column names : (userid integer, signup_date) 
