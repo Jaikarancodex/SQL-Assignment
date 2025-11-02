@@ -122,21 +122,71 @@
 
 <img width="1691" height="240" alt="image" src="https://github.com/user-attachments/assets/fd07d111-36ac-4d4e-83bc-f176f3a42a76" />
 
-4.Write a query to find gmail accounts with latest and first signup date and difference between both the dates and also write the query to replace null value with ‘1970-01-01’ 
+## 4.Write a query to find gmail accounts with latest and first signup date and difference between both the dates and also write the query to replace null value with ‘1970-01-01’ 
+#### Column names: (id, email_id, signup_date) 
+#### Data: 
 
-Column names: (id, email_id, signup_date) 
+###### (1, 'Rajesh@Gmail.com', '2022-02-01'), (2, 'Rakesh_gmail@rediffmail.com', '2023-01-22'), (3, 'Hitest@Gmail.com', '2020-09-08'), (4, 'Salil@Gmmail.com', '2019-07-05'), (5, 'Himanshu@Yahoo.com', '2023-05-09'), (6, 'Hitesh@Twitter.com', '2015-01-01'), (7, 'Rakesh@facebook.com', null); 
 
-Data: 
+### Step 1: Create the table
+<img width="1683" height="200" alt="image" src="https://github.com/user-attachments/assets/61a60a9a-e085-45ec-b2ee-e7403a1c0ab0" />
 
-(1, 'Rajesh@Gmail.com', '2022-02-01'), 
- (2, 'Rakesh_gmail@rediffmail.com', '2023-01-22'), 
- (3, 'Hitest@Gmail.com', '2020-09-08'), 
- (4, 'Salil@Gmmail.com', '2019-07-05'), 
- (5, 'Himanshu@Yahoo.com', '2023-05-09'), 
- (6, 'Hitesh@Twitter.com', '2015-01-01'), 
- (7, 'Rakesh@facebook.com', null); 
+### Step 2: Insert the data
+<img width="1682" height="253" alt="image" src="https://github.com/user-attachments/assets/3cf3559e-5efe-4e34-873b-d94e0a8ba5d7" />
 
-Create table email_signup with above data 
+### Step 3: Replace NULL with '1970-01-01'
+<img width="1687" height="180" alt="image" src="https://github.com/user-attachments/assets/eab05f97-c1ec-4aa1-b560-8c7cecf0c91c" />
+
+###### //You can verify:
+<img width="1686" height="272" alt="image" src="https://github.com/user-attachments/assets/c4fbe747-e71c-48c1-bb1f-92f09c8f8a0a" />
+
+### Step 4: Find Gmail Accounts Only (and compute stats) 
+#### We need:
+* Only rows with @gmail.com (case-insensitive)
+* Count of Gmail accounts
+* Latest signup date
+* Earliest signup date
+* Difference (in days) between those two dates
+<img width="1688" height="212" alt="image" src="https://github.com/user-attachments/assets/f07aaa98-c19e-4b90-8d8f-34aca693b79f" />
+
+## 5.Solve the below questions by creating below mentioned tables and adding the given dataset. 
+###### //Hint: Solve using the Window Functions 
+
+#### create a table named sales_data with columns: productid, sale_date, and  quantity_sold. 
+#### insert some sample data into the table: 
+#### dataset:  
+###### (1, '2022-01-01', 20), (2, '2022-01-01', 15),	(1, '2022-01-02', 10), 	(2, '2022-01-02', 25),	(1, '2022-01-03', 30),	(2, '2022-01-03', 18), (1, '2022-01-04', 12),	(2, '2022-01-04', 22) 
+
+* Assign rank by partition based on product_id and find the latest product_id sold 
+* Retrieve the quantity_sold value from a previous row and compare the quantity_sold. 
+* Partition based on product_id and return the first and last values in ordered set.
+
+### Step 1: Create the table
+<img width="1693" height="197" alt="image" src="https://github.com/user-attachments/assets/7b74753a-ba7f-4858-9463-49ff17426072" />
+
+### Step 2: Insert sample data
+<img width="1683" height="286" alt="image" src="https://github.com/user-attachments/assets/48abe890-767e-44c6-a3d4-5ecc061bc08d" />
+
+### Step 3: Assign Rank and Find Latest Product Sold
+###### //Use RANK() over a partition by product_id, ordered by sale_date DESC (latest first):
+<img width="1688" height="332" alt="image" src="https://github.com/user-attachments/assets/a428f314-8f8d-434e-96a6-16561dbfa253" />
+
+### Step 4: Retrieve Previous Row’s Quantity (Compare with Current)
+###### //Use the LAG() function:
+<img width="1688" height="453" alt="image" src="https://github.com/user-attachments/assets/857d2601-ee7b-45af-bb10-b3ec1b49a469" />
+
+### Step 5: Return the First and Last Values (Using Window Functions)
+###### //Here, we’ll use FIRST_VALUE() and LAST_VALUE() to get earliest and latest sale quantities for each product.
+<img width="1686" height="550" alt="image" src="https://github.com/user-attachments/assets/65ed8ba9-ddc9-4f21-a195-f0bfc68a1be1" />
+
+
+
+
+
+
+ 
+
+
 
 
   
