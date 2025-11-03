@@ -105,7 +105,7 @@
 
 <img width="1683" height="341" alt="image" src="https://github.com/user-attachments/assets/62434f8f-bd64-4563-82c5-041253f2fee0" />
 
-## Find the total salary of each department 
+## 3.Find the total salary of each department 
 #### Column names:(id_deptname, emp_name, salary) 
 #### Data:  
 ###### ('1111-MATH', 'RAHUL', 10000), ('1111-MATH', 'RAKESH', 20000), ('2222-SCIENCE', 'AKASH', 10000), ('222-SCIENCE', 'ANDREW', 10000), ('22-CHEM', 'ANKIT', 25000), ('3333-CHEM', 'SONIKA', 12000), ('4444-BIO', 'HITESH', 2300), ('44-BIO', 'AKSHAY', 10000) 
